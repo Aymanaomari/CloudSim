@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.cloudsim</groupId>
+    <artifactId>cloudsim-simulation</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>CloudSim Simulation</name>
+    <description>CloudSim v3.0 simulation with 8 cloudlets running on 4 VMs in a datacenter</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <!-- CloudSim v3.0 - Must be installed locally -->
+        <dependency>
+            <groupId>org.cloudbus</groupId>
+            <artifactId>cloudsim</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <mainClass>com.cloudsim.simulation.DataCenterSimulation</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
